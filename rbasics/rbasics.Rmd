@@ -1,5 +1,5 @@
 ---
-title: "rbasics"
+title: "Basic Tutorial to R"
 author: Nitendra Gautam
 date: November 23, 2017
 output: 
