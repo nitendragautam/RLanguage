@@ -12,9 +12,8 @@
 
 <meta name="author" content="Nitendra Gautam" />
 
-<meta name="date" content="2017-11-23" />
 
-<title>Basic Tutorial to R</title>
+<title>Basic Math with R</title>
 
 
 
@@ -71,36 +70,87 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="container">
 <div class="inner">
 <header>
-<h1 class="title toc-ignore">Basic Tutorial to R</h1>
+<h1 class="title toc-ignore">Basic Math with R</h1>
 <h3 class="author">Nitendra Gautam</h3>
-<h3 class="date">November 23, 2017</h3>
+<h3 class="date">November 23 ,2017</h3>
 </header>
 
 <hr>
 
 
 
-<div id="github-documents" class="section level2">
-<h2>GitHub Documents</h2>
-<p>This is an R Markdown format used for publishing markdown documents to GitHub. When you click the <strong>Knit</strong> button all R code chunks are run and a markdown file (.md) suitable for publishing to GitHub is generated.</p>
-</div>
-<div id="including-code" class="section level2">
-<h2>Including Code</h2>
-<p>You can include R code in the document as follows:</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">summary</span>(cars)</code></pre></div>
-<pre><code>##      speed           dist       
-##  Min.   : 4.0   Min.   :  2.00  
-##  1st Qu.:12.0   1st Qu.: 26.00  
-##  Median :15.0   Median : 36.00  
-##  Mean   :15.4   Mean   : 42.98  
-##  3rd Qu.:19.0   3rd Qu.: 56.00  
-##  Max.   :25.0   Max.   :120.00</code></pre>
-</div>
-<div id="including-plots" class="section level2">
-<h2>Including Plots</h2>
-<p>You can also embed plots, for example:</p>
-<p><img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAqAAAAHgCAMAAABNUi8GAAAABlBMVEUAAAD///+l2Z/dAAAACXBIWXMAAA7DAAAOwwHHb6hkAAAKW0lEQVR4nO3dh5ajSBZF0cj//+leXWmEHCYMXMHeqydHUyU9GHRaIkhXviBYOXoHYI5AiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpAiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpAiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpAiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpAiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpAiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpAiSZQogmUaAIlWudAC6xyVKB9x3FWowJd6l+grDIo0PJ0o2kclzUm0PLyZvU4rkugRBMo0ZyDEs0qnhQvc3EdlBDl61UWAiVDmXx8+uPVj1+/OW/xbLJvoBZJbLRroC4zsdme56BvA93+RSpcxo6reK+gdOIclGhW8URzHZRoAiXauLf4rzfLsqpxXNW4RVJ5c2GrZhyXNfAy05tPDVSM47oESjSBEs05KNGs4onmOijRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBsVaPnRaRxXNSjQ8nSjaRyXNSbQ8vJm9TiuS6BEEyjRnIMSzSqeaK6DEk2gRPMWTzSLJKK5zES0nQMtZem9H6a8ghLNOSjRrOKJ5joo0QRKtGFv8V/fb/OdxnFVAxdJZe5hAmWVcZeZyuzjBMoqAiWaQInmHJRoLtSzo+1fhOE6KPuZnPpteUjfOx4yjk9QJh+3PabnHQ8ZxycQKNEESjbnoGSziudkBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRKsK9P9vfWosTKCsUhNo+f1nj+1ybRWBlsl/xm+XaxMo0QRKNOegRKtdxbf+NliBsorroESrPAfdb7tcm0CJVrlI2m+7XFvNK+jSb/Doul2uzSKJaAIlmkCJ5hyUaPWvoD7VyQ4a3uK9gjKeQIk2KlC/7ZguGhZJq+797l4CZZUxl5mWPy8qUFYRKNFqv1hk/i1eoHQy6HuSnIPSx6hvmrOKpwvf1Uk0gRKtapFUlvv0Fk8Xg77cziKJPlwHJdrO10H/vpZUoKwyZpHkFZROXKgnmgv1RHMdlGijroN22y6fpu8KeNB10MUHCfSs2l+8nsb1veO/O5el60kCPaky+dhv3sY7Lv8amrI0XaAnlRBo+f1n8e4CvZyAQNet4hcWUgI9q+PPQddeZpp9lRXoaR2+il99HXTuRFWgrDLqHPT7jgKlUe0q3q+hYRdjL9TvNo6zqjwH3W+7XJtAiVb7FfW7bZdrq3kF9SPA2Y1FEtEESjTXQYlWv0jyFfXsoOEyk0US4wmUaAIlWsM5qEAZr+VCfctSXqCs4joo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEEynZ9f9PM/Ka63/GQceypfO33BAqUrXr88LiNG+t5x0PGsSOBEk2gZHMOSjarePg2KtClH38nUFYZFGh5utE0jssaE+jTT7ttG8d1CZRoAiWac1CiWcUTzXVQogmUaN7iiWaRRDSXmYi2c6Adfkcdl+IVlGjOQYlmFU8010GJJlCiDXyLn32cQFll4CLpO1GB0mLoZaaZb08VKKuMvQ5aBEqbwRfqi0BpMvxCvUBpMWwVv/A4gaYL+XoJ10F5aWaBuyuB8kqZfDyUQHlFoH3H0ZlA+46jN+egZLOKh2UCJZpAiSZQogmUaAIlmkCJJlCiCZRoAiWaQIkmUKIJlGgCJZpALyzkK+pmCfS6Ur4meZZALyvmuzpmCfSyBLrjOLYT6I7jqOAcdL9x1LCK320cZyVQogmUaAIlmkCJJlCiCfTkPuFS0hyBnttHXIyfI9BT+4xPZ84R6KkJdPh2aSHQ4duliXPQ0duljVX84O1ybQIlmkBP4NPfxucI9PN9/EJojkA/3udfSpoj0I8n0G13PGTclQl02x0PGXd6c+sg56Cb7njIuLObb9AqfssdDxl3cud+F58l0BzvXwgF2vGOh4w7g5m3cYF2vOMh4z7FzNnibISnXgfNGhVo+bFl3OxKdW4dUPvAIUOXIqx7Gz/zOmjWoEDL043lcUvPXvXTvuvQ6nfqC7+NzxkTaHl5c37c3BNU/czuPrT+gRd+G5+zc6ClvH3vv3yg130bn+MVtO9Qa53OnIPu+UAvkpsNCtQqnj5GBbrzOM5KoEQTKNEESjSBEk2gRBMo0QRKtMMChVUOCnTkNoy52JjuswZvw5iLjek+a/A2jLnYmO6zBm/DmIuN6T5r8DaMudiY7rMGb8OYi43pPmvwNoy52JjuswZvw5iLjek+a/A2jLnYmO6zoDuBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESrTxgW74FtP3E36GNMwqD3tTOar02KO/b7tt25vJPjTuzbsbNWO6PFuTse0jljfQuJEyvVE56/fo/U6oHDUZU79HzzvRPuYse/Ny7kgPT2jDjKZZZXrwSvWo8vDAqjHPO9E2psPe3KY07c1doD2e+R4DVs1v2kq5v1Ezq9wdvOpAy8Nz0PavTPO/LnePbtqb9kAfxjTtzdPMkXoE+ndO0zKryyvo75gOe9Qx0Oa9KX0C/R7T5dmaDG0dsGp++yvo3SFsmtIj0PY96v2a1bA3j0F1GNP8bE3Gtg5YNb/DVtpeaPoG2mGPOgZ6ur15M3MMgX7A3vQ84eixNy9HDiLQ91Oa96bc3xZo9fymrfQ4cn0DbT5dm/7XwWOeH33kmHeDB7qd3rSPaJl1O15No3qMmb7OHD6mPD/6wDEvBjdPWNxC+ye8Wj8/+e+hfUZ1GFNefDLwuDGvHn3kmKex7SNgHIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBFqt/tA56Os5VtUEugfHqtbPzz78+90B/278/NnTjyAst1+B8fPx90do3v7miP8T+RyWanc/pbXcPrz6aa73vwFj+tfl7n48clSq3aIqkxxf/xjs218/BXr3NzxyUKptDvTf7SLQTRyUar8nlX/NvQj07q//6nwO9PbjvLnnoFS7O2+cewX9enydfPMKygsOTTXnoHtwUKrdL9Onf/JiFX/760mgZdqwp+IlR6Xaw3XQr+mr4vN10J//UX5OTb8/3M4CnIG+4bAM4KD241gO4KD241gO4KD241gSTaBEEyjRBEo0gRJNoEQTKNEESjSBEk2gRBMo0QRKNIESTaBEEyjRBEo0gRJNoEQTKNEESjSBEu0/EOXfBgTDbxMAAAAASUVORK5CYII=" /><!-- --></p>
-<p>Note that the <code>echo = FALSE</code> parameter was added to the code chunk to prevent printing of the R code that generated the plot.</p>
+<p>R have following types of Operators</p>
+<ul>
+<li>Arithmetic Operators</li>
+<li>Relational Operators</li>
+<li>Logical Operators</li>
+<li>Assignment Operators</li>
+<li>Miscellaneous Operators</li>
+</ul>
+<div id="arithmetic-operators" class="section level2">
+<h2>Arithmetic Operators</h2>
+<ul>
+<li>Square root</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">25</span>)</code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<ul>
+<li>Natural Logarithm</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log</span>(<span class="dv">100</span>)</code></pre></div>
+<pre><code>## [1] 4.60517</code></pre>
+<ul>
+<li>Log of base 10</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">log10</span>(<span class="dv">10</span>)</code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<ul>
+<li>Power of Number</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span> <span class="op">^</span><span class="dv">3</span></code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">3</span><span class="op">^</span><span class="dv">9</span></code></pre></div>
+<pre><code>## [1] 19683</code></pre>
+<ul>
+<li>Value of pi</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">pi</code></pre></div>
+<pre><code>## [1] 3.141593</code></pre>
+<ul>
+<li>Rounding a number</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">round</span>(pi <span class="op">*</span><span class="st"> </span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<ul>
+<li>Rounding up number to upper bound /nearest higher Integer</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">ceiling</span>(pi <span class="op">*</span><span class="st"> </span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 10</code></pre>
+<ul>
+<li>Rounding to the nearest lower Integer</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">floor</span>(pi <span class="op">*</span><span class="st"> </span><span class="dv">3</span>)</code></pre></div>
+<pre><code>## [1] 9</code></pre>
+<ul>
+<li>Finding Quotient of specific division</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">25</span> <span class="op">%/%</span><span class="st"> </span><span class="dv">6</span></code></pre></div>
+<pre><code>## [1] 4</code></pre>
+<ul>
+<li>Finding remainder of two numbers</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">125</span> <span class="op">%%</span><span class="st"> </span><span class="dv">6</span></code></pre></div>
+<pre><code>## [1] 5</code></pre>
+<ul>
+<li>Square root of 729</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">sqrt</span>(<span class="dv">729</span>)</code></pre></div>
+<pre><code>## [1] 27</code></pre>
+<ul>
+<li>Remainder of 109/25</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="dv">109</span> <span class="op">%%</span><span class="st"> </span><span class="dv">25</span></code></pre></div>
+<pre><code>## [1] 9</code></pre>
 </div>
 </div>
 </div>
