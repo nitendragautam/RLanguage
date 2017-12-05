@@ -20,18 +20,31 @@ knitr::opts_chunk$set(echo = TRUE)
 Variables in R are typically assigned using <- but can alos be assigned using = ,as in x <-1 or x =1
 
 
-* Create variables in R and assign some value
-
 ```{r}
+
+#Create variables in R and assign some value
 x <- 139 +121
+x
+
+# Overwrite variables in R
+x <- x/60
 x
 ```
 
+To remove the variable from Memory use rm(variable_name) command
 
-* Overwrite variables in R
+```{r}
+
+# Removes the variables x from Memory 
+rm(x)
+```
 
 
+## Order of Operation in R 
 
+In order to put emphasis on order of operations use the small bracket.
+
+For example : ```totalHours <- (139 + 121) /60```
 
 
 

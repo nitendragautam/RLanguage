@@ -83,15 +83,22 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="variable-in-r" class="section level2">
 <h2>Variable in R</h2>
 <p>Variables in R are typically assigned using &lt;- but can alos be assigned using = ,as in x &lt;-1 or x =1</p>
-<ul>
-<li>Create variables in R and assign some value</li>
-</ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">139</span> <span class="op">+</span><span class="dv">121</span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Create variables in R and assign some value</span>
+x &lt;-<span class="st"> </span><span class="dv">139</span> <span class="op">+</span><span class="dv">121</span>
 x</code></pre></div>
 <pre><code>## [1] 260</code></pre>
-<ul>
-<li>Overwrite variables in R</li>
-</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Overwrite variables in R</span>
+x &lt;-<span class="st"> </span>x<span class="op">/</span><span class="dv">60</span>
+x</code></pre></div>
+<pre><code>## [1] 4.333333</code></pre>
+<p>To remove the variable from Memory use rm(variable_name) command</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Removes the variables x from Memory </span>
+<span class="kw">rm</span>(x)</code></pre></div>
+</div>
+<div id="order-of-operation-in-r" class="section level2">
+<h2>Order of Operation in R</h2>
+<p>In order to put emphasis on order of operations use the small bracket.</p>
+<p>For example : <code>totalHours &lt;- (139 + 121) /60</code></p>
 </div>
 <div id="r-data-types" class="section level2">
 <h2>R Data Types</h2>
