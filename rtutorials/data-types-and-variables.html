@@ -14,7 +14,7 @@
 
 <meta name="date" content="2017-11-23" />
 
-<title>Data Types in R</title>
+<title>Data Types and Variables in R</title>
 
 
 
@@ -71,7 +71,7 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 <div id="container">
 <div class="inner">
 <header>
-<h1 class="title toc-ignore">Data Types in R</h1>
+<h1 class="title toc-ignore">Data Types and Variables in R</h1>
 <h3 class="author">Nitendra Gautam</h3>
 <h3 class="date">November 23, 2017</h3>
 </header>
@@ -80,13 +80,28 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
+<div id="variable-in-r" class="section level2">
+<h2>Variable in R</h2>
+<p>Variables in R are typically assigned using &lt;- but can alos be assigned using = ,as in x &lt;-1 or x =1</p>
+<ul>
+<li>Create variables in R and assign some value</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">x &lt;-<span class="st"> </span><span class="dv">139</span> <span class="op">+</span><span class="dv">121</span>
+x</code></pre></div>
+<pre><code>## [1] 260</code></pre>
+<ul>
+<li>Overwrite variables in R</li>
+</ul>
+</div>
 <div id="r-data-types" class="section level2">
 <h2>R Data Types</h2>
-<p>There are five data types in R .R is case sensitive when defining variables. A variable named ‘a’ is not same as ‘A’.</p>
+<p>R has variety of data types and is case sensitive when defining variables. A variable named ‘a’ is not same as ‘A’.</p>
 <ul>
-<li>Numeric</li>
-<li>Integer</li>
-<li>Character</li>
+<li>Scalar</li>
+<li>Vectors(numerical ,Integer,character ,logical)</li>
+<li>Matrices</li>
+<li>Data Frames</li>
+<li>Lists</li>
 <li>Factor</li>
 <li>Logical</li>
 </ul>
@@ -154,6 +169,39 @@ a &lt;-<span class="st"> </span><span class="dv">3</span>
 
 <span class="kw">class</span>(sV)</code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">levels</span>(sV)</code></pre></div>
+<pre><code>## [1] &quot;bad&quot;  &quot;good&quot; &quot;ugly&quot;</code></pre>
+</div>
+<div id="vectors" class="section level3">
+<h3>Vectors</h3>
+<p>Vector are type of object which is used to store multiple data of same data type</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">5.3</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># Numeric Vector </span>
+v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;one&quot;</span>,<span class="st">&quot;two&quot;</span>,<span class="st">&quot;three&quot;</span>,<span class="st">&quot;four&quot;</span>,<span class="st">&quot;five&quot;</span>) <span class="co"># Character Vector</span>
+v3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>) <span class="co"># Logical Vector</span></code></pre></div>
+<ul>
+<li>Refer to the element of the vector using Subscript</li>
+</ul>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)]  <span class="co">#Third and Fourth Elements of Vector</span></code></pre></div>
+<pre><code>## [1] 5.3 6.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1[<span class="dv">4</span>] <span class="co"># Get Fourth Element from Vector V1</span></code></pre></div>
+<pre><code>## [1] 6</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1[<span class="dv">2</span><span class="op">:</span><span class="dv">6</span>]  <span class="co"># Get elements fomr 2nd to 6th element </span></code></pre></div>
+<pre><code>## [1]  2.0  5.3  6.0 -2.0  4.0</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(v2) <span class="co"># Class of Character Vector</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v2[<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>] <span class="co"># Get elements from </span></code></pre></div>
+<pre><code>## [1] &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+</div>
+<div id="given-a-large-vector-find-the-first-and-last-element-of-the-vector" class="section level3">
+<h3>Given a Large Vector find the first and Last Element of the Vector</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ab &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span><span class="op">:</span><span class="dv">50</span>) <span class="co"># Large vector from 1 to 50</span>
+
+ab[<span class="dv">1</span>] <span class="co"># Get the first Element </span></code></pre></div>
+<pre><code>## [1] 1</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ab[<span class="kw">length</span>(ab)] <span class="co"># Get the last element which will be at the index equal to length of Vector</span></code></pre></div>
+<pre><code>## [1] 50</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ab[<span class="kw">c</span>(ab[<span class="dv">1</span>],ab[<span class="kw">length</span>(ab)])]</code></pre></div>
+<pre><code>## [1]  1 50</code></pre>
 </div>
 </div>
 </div>
