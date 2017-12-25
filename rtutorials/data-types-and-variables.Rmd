@@ -13,11 +13,41 @@ output:
 knitr::opts_chunk$set(echo = TRUE)
 ```
 
+## Variables and Data types in R
+
+Everything in R is an object .
+### Variable Types
+* character - Strings
+* integer- Integers
+* numeric - Integers and Fractions
+* logical -Boolean
+* complex - Complex numbers 
+* factor -Categorical variable where each label is a category
+
+### Data Structures in R 
+
+ R intuitively decides variable type in the background and assigns a class to the variable.
+R has variety of data types and  is case sensitive when defining variables. A variable named 'a' is not same as 'A'.
+
+* Atomic Vectors(numerical ,Integer,character ,logical)
+* Matrix
+* Data Frames
+* Lists
+* Factors
+
+Here Atomic means 
+
+R provides many functions to examine features of vectors and other object .
+
+* ```class()``` : Gives information about the object on high level
+* ```typeof()```: Gives information about the object's data type on low level
+* ```length()```: Gives the length of the object
+* ```attributes()```: gives the information about the metadata if the object has
 
 
 ## Variable in R
 
-Variables in R are typically assigned using <- but can alos be assigned using = ,as in x <-1 or x =1
+Variables in R are typically assigned using <- but can alos be assigned using <- or -> ,as in x <-1 or 1 -> x
 
 
 ```{r}
@@ -29,12 +59,15 @@ x
 # Overwrite variables in R
 x <- x/60
 x
-```
 
-To remove the variable from Memory use rm(variable_name) command
+# Assign Character Values
+myName <- "Nitendra Gautam"
 
-```{r}
+"Nitendra Gautam" -> newName
 
+typeof(myName) # Gives the data type of myName
+
+# To remove the variable from Memory use rm(variable_name) command
 # Removes the variables x from Memory 
 rm(x)
 ```
@@ -45,22 +78,6 @@ rm(x)
 In order to put emphasis on order of operations use the small bracket.
 
 For example : ```totalHours <- (139 + 121) /60```
-
-
-
-## R Data Types
-
-
-
-R has variety of data types and  is case sensitive when defining variables. A variable named 'a' is not same as 'A'.
-
-* Scalar
-* Vectors(numerical ,Integer,character ,logical)
-* Matrices
-* Data Frames
-* Lists
-* Factor
-* Logical 
 
 
 ### Numeric Data Type 
@@ -75,15 +92,12 @@ print(a)
 # Check Data Types in R 
 paste(" Class of A is ", class(a))
 
-```
-
-
-### Convert numeric data type into integer
-
-```{r}
+# Convert numeric data type into integer
 b <- as.integer(a)
 paste("Class of B is " , class(b ))
 ```
+
+
 
 ### Character Data Type
 
@@ -123,19 +137,13 @@ nlevels(factorVariable)
 
 ```
 
-
 ### Logical data Type
-
 
 ```{r}
 k <- "TRUE"
 class(k)
 
-```
-
-### Create a factor variable with 3 Levels and 6 Items
-
-```{r}
+# Create a factor variable with 3 Levels and 6 Items
 sV <- factor(c("good","bad","ugly","good","bad","ugly"))
 
 class(sV)
@@ -148,17 +156,22 @@ levels(sV)
 
 Vector are type of object which is used to store multiple data of same data type
 
+Technically, vectors can be one of two types:
+
+* atomic vectors
+* lists
+
+In general vector refers to the atomic types not the lists 
+Vector can have character ,integer,numeric or logical value.
+
 
 ```{r}
 
-v1 <- c(1,2,5.3,6,-2,4,5) # Numeric Vector 
+v1 <- c(1,2,5.3,6,-2,4,5) # create a Numeric Vector 
 v2 <- c("one","two","three","four","five") # Character Vector
 v3 <- c(TRUE,FALSE,TRUE,FALSE) # Logical Vector
-```
 
-* Refer to the element of the vector using Subscript 
-
-```{r}
+# Refer to the element of the vector using Subscript 
 v1[c(3,4)]  #Third and Fourth Elements of Vector
 
 v1[4] # Get Fourth Element from Vector V1
@@ -167,7 +180,23 @@ v1[2:6]  # Get elements fomr 2nd to 6th element
 
 class(v2) # Class of Character Vector
 
-v2[2:5] # Get elements from 
+v2[2:5] # Get elements from second to 5th element
+
+ typeof(v2)  #Gives the types of Vector V2
+ 
+```
+
+### Adding Elements in character Vector
+
+```{r}
+
+z <-c("Sam","Ram","Hari")
+
+## Add oneelements in Vector
+z <- c(z,"Mike")
+
+## Add Another elements in Vector
+z <- c(z,"Shyam")
 ```
 
 
@@ -183,6 +212,10 @@ ab[c(ab[1],ab[length(ab)])]
 ```
 
 
+
+## References
+
+[1]  <a href="https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/">R Data Structures </a>
 
 
 

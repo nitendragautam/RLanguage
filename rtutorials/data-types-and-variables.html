@@ -80,9 +80,32 @@ code > span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Inf
 
 
 
+<div id="variables-and-data-types-in-r" class="section level2">
+<h2>Variables and Data types in R</h2>
+<p>Everything in R is an object . ### Variable Types * character - Strings * integer- Integers * numeric - Integers and Fractions * logical -Boolean * complex - Complex numbers * factor -Categorical variable where each label is a category</p>
+<div id="data-structures-in-r" class="section level3">
+<h3>Data Structures in R</h3>
+<p>R intuitively decides variable type in the background and assigns a class to the variable. R has variety of data types and is case sensitive when defining variables. A variable named ‘a’ is not same as ‘A’.</p>
+<ul>
+<li>Atomic Vectors(numerical ,Integer,character ,logical)</li>
+<li>Matrix</li>
+<li>Data Frames</li>
+<li>Lists</li>
+<li>Factors</li>
+</ul>
+<p>Here Atomic means</p>
+<p>R provides many functions to examine features of vectors and other object .</p>
+<ul>
+<li><code>class()</code> : Gives information about the object on high level</li>
+<li><code>typeof()</code>: Gives information about the object’s data type on low level</li>
+<li><code>length()</code>: Gives the length of the object</li>
+<li><code>attributes()</code>: gives the information about the metadata if the object has</li>
+</ul>
+</div>
+</div>
 <div id="variable-in-r" class="section level2">
 <h2>Variable in R</h2>
-<p>Variables in R are typically assigned using &lt;- but can alos be assigned using = ,as in x &lt;-1 or x =1</p>
+<p>Variables in R are typically assigned using &lt;- but can alos be assigned using &lt;- or -&gt; ,as in x &lt;-1 or 1 -&gt; x</p>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co">#Create variables in R and assign some value</span>
 x &lt;-<span class="st"> </span><span class="dv">139</span> <span class="op">+</span><span class="dv">121</span>
 x</code></pre></div>
@@ -91,27 +114,21 @@ x</code></pre></div>
 x &lt;-<span class="st"> </span>x<span class="op">/</span><span class="dv">60</span>
 x</code></pre></div>
 <pre><code>## [1] 4.333333</code></pre>
-<p>To remove the variable from Memory use rm(variable_name) command</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Removes the variables x from Memory </span>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Assign Character Values</span>
+myName &lt;-<span class="st"> &quot;Nitendra Gautam&quot;</span>
+
+<span class="st">&quot;Nitendra Gautam&quot;</span> -&gt;<span class="st"> </span>newName
+
+<span class="kw">typeof</span>(myName) <span class="co"># Gives the data type of myName</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># To remove the variable from Memory use rm(variable_name) command</span>
+<span class="co"># Removes the variables x from Memory </span>
 <span class="kw">rm</span>(x)</code></pre></div>
 </div>
 <div id="order-of-operation-in-r" class="section level2">
 <h2>Order of Operation in R</h2>
 <p>In order to put emphasis on order of operations use the small bracket.</p>
 <p>For example : <code>totalHours &lt;- (139 + 121) /60</code></p>
-</div>
-<div id="r-data-types" class="section level2">
-<h2>R Data Types</h2>
-<p>R has variety of data types and is case sensitive when defining variables. A variable named ‘a’ is not same as ‘A’.</p>
-<ul>
-<li>Scalar</li>
-<li>Vectors(numerical ,Integer,character ,logical)</li>
-<li>Matrices</li>
-<li>Data Frames</li>
-<li>Lists</li>
-<li>Factor</li>
-<li>Logical</li>
-</ul>
 <div id="numeric-data-type" class="section level3">
 <h3>Numeric Data Type</h3>
 <p>It includes the numbes that contains decimal point which is default .</p>
@@ -123,10 +140,8 @@ a &lt;-<span class="st"> </span><span class="dv">3</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Check Data Types in R </span>
 <span class="kw">paste</span>(<span class="st">&quot; Class of A is &quot;</span>, <span class="kw">class</span>(a))</code></pre></div>
 <pre><code>## [1] &quot; Class of A is  numeric&quot;</code></pre>
-</div>
-<div id="convert-numeric-data-type-into-integer" class="section level3">
-<h3>Convert numeric data type into integer</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">b &lt;-<span class="st"> </span><span class="kw">as.integer</span>(a)
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Convert numeric data type into integer</span>
+b &lt;-<span class="st"> </span><span class="kw">as.integer</span>(a)
 <span class="kw">paste</span>(<span class="st">&quot;Class of B is &quot;</span> , <span class="kw">class</span>(b ))</code></pre></div>
 <pre><code>## [1] &quot;Class of B is  integer&quot;</code></pre>
 </div>
@@ -169,10 +184,8 @@ a &lt;-<span class="st"> </span><span class="dv">3</span>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">k &lt;-<span class="st"> &quot;TRUE&quot;</span>
 <span class="kw">class</span>(k)</code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-</div>
-<div id="create-a-factor-variable-with-3-levels-and-6-items" class="section level3">
-<h3>Create a factor variable with 3 Levels and 6 Items</h3>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">sV &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;good&quot;</span>,<span class="st">&quot;bad&quot;</span>,<span class="st">&quot;ugly&quot;</span>,<span class="st">&quot;good&quot;</span>,<span class="st">&quot;bad&quot;</span>,<span class="st">&quot;ugly&quot;</span>))
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="co"># Create a factor variable with 3 Levels and 6 Items</span>
+sV &lt;-<span class="st"> </span><span class="kw">factor</span>(<span class="kw">c</span>(<span class="st">&quot;good&quot;</span>,<span class="st">&quot;bad&quot;</span>,<span class="st">&quot;ugly&quot;</span>,<span class="st">&quot;good&quot;</span>,<span class="st">&quot;bad&quot;</span>,<span class="st">&quot;ugly&quot;</span>))
 
 <span class="kw">class</span>(sV)</code></pre></div>
 <pre><code>## [1] &quot;factor&quot;</code></pre>
@@ -182,13 +195,18 @@ a &lt;-<span class="st"> </span><span class="dv">3</span>
 <div id="vectors" class="section level3">
 <h3>Vectors</h3>
 <p>Vector are type of object which is used to store multiple data of same data type</p>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">5.3</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># Numeric Vector </span>
-v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;one&quot;</span>,<span class="st">&quot;two&quot;</span>,<span class="st">&quot;three&quot;</span>,<span class="st">&quot;four&quot;</span>,<span class="st">&quot;five&quot;</span>) <span class="co"># Character Vector</span>
-v3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>) <span class="co"># Logical Vector</span></code></pre></div>
+<p>Technically, vectors can be one of two types:</p>
 <ul>
-<li>Refer to the element of the vector using Subscript</li>
+<li>atomic vectors</li>
+<li>lists</li>
 </ul>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)]  <span class="co">#Third and Fourth Elements of Vector</span></code></pre></div>
+<p>In general vector refers to the atomic types not the lists Vector can have character ,integer,numeric or logical value.</p>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="dv">1</span>,<span class="dv">2</span>,<span class="fl">5.3</span>,<span class="dv">6</span>,<span class="op">-</span><span class="dv">2</span>,<span class="dv">4</span>,<span class="dv">5</span>) <span class="co"># create a Numeric Vector </span>
+v2 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="st">&quot;one&quot;</span>,<span class="st">&quot;two&quot;</span>,<span class="st">&quot;three&quot;</span>,<span class="st">&quot;four&quot;</span>,<span class="st">&quot;five&quot;</span>) <span class="co"># Character Vector</span>
+v3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE</span>,<span class="ot">FALSE</span>,<span class="ot">TRUE</span>,<span class="ot">FALSE</span>) <span class="co"># Logical Vector</span>
+
+<span class="co"># Refer to the element of the vector using Subscript </span>
+v1[<span class="kw">c</span>(<span class="dv">3</span>,<span class="dv">4</span>)]  <span class="co">#Third and Fourth Elements of Vector</span></code></pre></div>
 <pre><code>## [1] 5.3 6.0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v1[<span class="dv">4</span>] <span class="co"># Get Fourth Element from Vector V1</span></code></pre></div>
 <pre><code>## [1] 6</code></pre>
@@ -196,8 +214,20 @@ v3 &lt;-<span class="st"> </span><span class="kw">c</span>(<span class="ot">TRUE
 <pre><code>## [1]  2.0  5.3  6.0 -2.0  4.0</code></pre>
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"><span class="kw">class</span>(v2) <span class="co"># Class of Character Vector</span></code></pre></div>
 <pre><code>## [1] &quot;character&quot;</code></pre>
-<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v2[<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>] <span class="co"># Get elements from </span></code></pre></div>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">v2[<span class="dv">2</span><span class="op">:</span><span class="dv">5</span>] <span class="co"># Get elements from second to 5th element</span></code></pre></div>
 <pre><code>## [1] &quot;two&quot;   &quot;three&quot; &quot;four&quot;  &quot;five&quot;</code></pre>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r"> <span class="kw">typeof</span>(v2)  <span class="co">#Gives the types of Vector V2</span></code></pre></div>
+<pre><code>## [1] &quot;character&quot;</code></pre>
+</div>
+<div id="adding-elements-in-character-vector" class="section level3">
+<h3>Adding Elements in character Vector</h3>
+<div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">z &lt;-<span class="kw">c</span>(<span class="st">&quot;Sam&quot;</span>,<span class="st">&quot;Ram&quot;</span>,<span class="st">&quot;Hari&quot;</span>)
+
+## Add oneelements in Vector
+z &lt;-<span class="st"> </span><span class="kw">c</span>(z,<span class="st">&quot;Mike&quot;</span>)
+
+## Add Another elements in Vector
+z &lt;-<span class="st"> </span><span class="kw">c</span>(z,<span class="st">&quot;Shyam&quot;</span>)</code></pre></div>
 </div>
 <div id="given-a-large-vector-find-the-first-and-last-element-of-the-vector" class="section level3">
 <h3>Given a Large Vector find the first and Last Element of the Vector</h3>
@@ -210,6 +240,10 @@ ab[<span class="dv">1</span>] <span class="co"># Get the first Element </span></
 <div class="sourceCode"><pre class="sourceCode r"><code class="sourceCode r">ab[<span class="kw">c</span>(ab[<span class="dv">1</span>],ab[<span class="kw">length</span>(ab)])]</code></pre></div>
 <pre><code>## [1]  1 50</code></pre>
 </div>
+</div>
+<div id="references" class="section level2">
+<h2>References</h2>
+<p>[1] <a href="https://swcarpentry.github.io/r-novice-inflammation/13-supp-data-structures/">R Data Structures </a></p>
 </div>
 </div>
 </div>
