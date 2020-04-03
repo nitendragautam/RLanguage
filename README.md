@@ -1,4 +1,9 @@
-## Contains code related to R
+
+[Blog Page](www.nitendratech.com)
+
+## Git Hub Pages Line
 
 
-[Home Page](http://nitendragautam.com/)
+[R Data types] (https://nitendragautam.github.io/learningR/rtutorials/data-types-and-variables)
+
+[R Operators](https://nitendragautam.github.io/learningR/rtutorials/operators)
