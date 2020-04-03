@@ -1,5 +1,5 @@
 
-[Nitendra Tech Blog Page ](www.nitendratech.com)
+[Blog Site](https://www.nitendratech.com)
 
 ## Git Hub Pages Line
 
