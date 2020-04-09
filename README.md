@@ -4,6 +4,6 @@
 ## Git Hub Pages Line
 
 
-[R Data types and Variables](https://nitendragautam.github.io/learningR/rtutorials/data-types-and-variables)
+[R Data types and Variables](https://nitendragautam.github.io/RLanguage/rtutorials/data-types-and-variables)
 
-[R Operators ](https://nitendragautam.github.io/learningR/rtutorials/operators)
+[R Operators ](https://nitendragautam.github.io/RLanguage/rtutorials/operators)
